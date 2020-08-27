@@ -1,7 +1,18 @@
+require('dotenv').config();
+
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 
 const app = express();
+
+/**
+ * database setup
+ */
+mongoose.connect('mongodb://localhost:27017/upload', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
