@@ -38,7 +38,7 @@ const storageTypes = {
 
 module.exports = {
   dest: path.resolve(__dirname, '..', '..', 'tmp', 'uploads'),
-  storage: storageTypes["local"],
+  storage: storageTypes["s3"], //para salvar no locar = ["local"]
   limits: {
     fileSize: 2 * 1024 * 1024, //limite de 2MB
   },
